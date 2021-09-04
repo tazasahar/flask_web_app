@@ -1,0 +1,55 @@
+{% extends 'base.html' %} {% block container %}
+<h2>Update</h2>
+<p>Edit a record in the MongoDB database collection.</p>
+<form method="POST" action="{{ url_for('edit_post', mongoid=mongoid) }}">
+
+  <p>
+    Date of Incident (DD/MM/YYYY): 
+    <input type="text" id="fdate" name="fdate" value ="{{doc.date_of_incident}}"/><br />
+  </p>
+
+  <p>
+    Time of Incident (Please use 24 hour time): 
+    <input type="text" id="ftime" name="ftime" value ="{{doc.time_of_incident}}"/><br />
+  </p>
+
+  <p>
+    Name of Injured Person: 
+    <input type="text" id="fname" name="fname" value ="{{doc.name}}"/><br />
+  </p>
+  
+  <p>
+    Address: 
+    <input type="text" id="faddress" name="faddress" value ="{{doc.address}}"/><br />
+  </p>
+ 
+  <p>
+    Phone Number(s): 
+    <input type="text" id="fnumber" name="fnumber" value ="{{doc.phone_number}}"/><br />
+  </p>
+
+  <p>
+    Date of birth (DD/MM/YYYY): 
+    <input type="text" id="fDOB" name="fDOB" value ="{{doc.date_of_birth}}"/><br />
+  </p>
+
+  <p>
+    Gender (Male/Female/Non-binary/Non-Non-Binary-nor-Sis-Gendered): 
+    <input type="text" id="fgender" name="fgender" value ="{{doc.gender}}"/><br />
+  </p>
+  <p>
+    Type of Injury: 
+    <input type="text" id="finjuryType" name="finjuryType" value ="{{doc.type_of_injury}}"/><br />
+  </p>
+
+  <p>
+    Details of Incident:
+    <textarea type="text" id="finjuryDetails" name="finjuryDetails">{{doc.details_of_injury}}</textarea>
+  </p>
+
+  <p>
+    <a href="{{ url_for('read')}}">Cancel</a>
+    <input type="submit" name="post-btn" value="Save" />
+  </p>
+</form>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'base.html' %} {% block container %}
+<h2>
+  Health and Safety Incident Report Form
+</h2>
+<form method="POST" action="{{ url_for('create_post') }}">
+  <p>
+   
+   <strong> Date of Incident (DD/MM/YYYY):</strong> 
+    <input type="text" id="fdate" name="fdate" /><br />
+  </p>
+
+  <p>
+    <strong> of Incident (Please use 24 hour time): </strong>
+    <input type="text" id="ftime" name="ftime" /><br />
+  </p>
+
+  <p>
+    <strong>Name of Injured Person:</strong>
+    <input type="text" id="fname" name="fname" /><br />
+  </p>
+  
+  <p>
+    <strong>Address:</strong>
+    <input type="text" id="faddress" name="faddress" /><br />
+  </p>
+ 
+  <p>
+    <strong>Phone Number(s):</strong> 
+    <input type="text" id="fnumber" name="fnumber" /><br />
+  </p>
+
+  <p>
+    <strong>Date of birth (DD/MM/YYYY):</strong>
+    <input type="text" id="fDOB" name="fDOB" /><br />
+  </p>
+
+  <p>
+    <strong> (Male/Female/Non-binary/Non-Non-Binary-nor-Sis-Gendered): </strong>
+    <input type="text" id="fgender" name="fgender" /><br />
+  </p>
+  <p>
+    <strong>Type of Injury:</strong>
+    <input type="text" id="finjuryType" name="finjuryType" /><br />
+  </p>
+
+  <p>
+    <strong>Details of Incident: </strong> 
+    <textarea type="text" id="finjuryDetails" name="finjuryDetails"></textarea>
+  </p>
+
+  <p>
+    <a href="{{ url_for('read')}}">Cancel</a>
+    <input type="submit" name="post-btn" value="Post" />
+  </p>
+</form>
+{% endblock %}
